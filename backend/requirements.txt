@@ -1,0 +1,5 @@
+sqlalchemy
+flask
+flask-httpauth
+Flask-Auth
+flask-cors

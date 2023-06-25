@@ -1,0 +1,454 @@
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8455E19C-0F81-4D30-A1A4-832AA41678DA}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GoogleFitApi</RootNamespace>
+    <AssemblyName>GoogleFitApi</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis, Version=1.56.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.56.0\lib\net45\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth, Version=1.56.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.56.0\lib\net461\Google.Apis.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.56.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.56.0\lib\net461\Google.Apis.Auth.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.56.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Core.1.56.0\lib\net45\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.56.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.56.0\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.7\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.7\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ConnectGoogleFitApi.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Models\FitPlay.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>FitPlay.Context.cs</LastGenOutput>
+      <DependentUpon>FitPlay.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\FitPlay.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FitPlay.edmx</DependentUpon>
+      <LastGenOutput>FitPlay.cs</LastGenOutput>
+    </Content>
+    <Content Include="OAuth.aspx" />
+    <Content Include="PWA\css\framework7-bundle-rtl.css" />
+    <Content Include="PWA\css\framework7-bundle-rtl.min.css" />
+    <Content Include="PWA\css\framework7-bundle.css" />
+    <Content Include="PWA\css\framework7-bundle.min.css" />
+    <Content Include="PWA\css\framework7-rtl.css" />
+    <Content Include="PWA\css\framework7-rtl.min.css" />
+    <Content Include="PWA\css\framework7.css" />
+    <Content Include="PWA\css\framework7.min.css" />
+    <Content Include="PWA\images\Intro.jpg" />
+    <Content Include="PWA\images\MainPage.jpg" />
+    <Content Include="PWA\index.html" />
+    <Content Include="PWA\js\components\accordion\accordion.js" />
+    <Content Include="PWA\js\components\actions\actions-class.js" />
+    <Content Include="PWA\js\components\actions\actions.js" />
+    <Content Include="PWA\js\components\appbar\appbar.js" />
+    <Content Include="PWA\js\components\app\app-class.js" />
+    <Content Include="PWA\js\components\app\load-module.js" />
+    <Content Include="PWA\js\components\area-chart\area-chart-class.js" />
+    <Content Include="PWA\js\components\area-chart\area-chart.js" />
+    <Content Include="PWA\js\components\autocomplete\autocomplete-class.js" />
+    <Content Include="PWA\js\components\autocomplete\autocomplete.js" />
+    <Content Include="PWA\js\components\badge\badge.js" />
+    <Content Include="PWA\js\components\block\block.js" />
+    <Content Include="PWA\js\components\button\button.js" />
+    <Content Include="PWA\js\components\calendar\calendar-class.js" />
+    <Content Include="PWA\js\components\calendar\calendar.js" />
+    <Content Include="PWA\js\components\card\card.js" />
+    <Content Include="PWA\js\components\checkbox\checkbox.js" />
+    <Content Include="PWA\js\components\chip\chip.js" />
+    <Content Include="PWA\js\components\color-picker\color-picker-class.js" />
+    <Content Include="PWA\js\components\color-picker\color-picker.js" />
+    <Content Include="PWA\js\components\color-picker\modules\alpha-slider.js" />
+    <Content Include="PWA\js\components\color-picker\modules\brightness-slider.js" />
+    <Content Include="PWA\js\components\color-picker\modules\current-color.js" />
+    <Content Include="PWA\js\components\color-picker\modules\hex.js" />
+    <Content Include="PWA\js\components\color-picker\modules\hs-spectrum.js" />
+    <Content Include="PWA\js\components\color-picker\modules\hsb-sliders.js" />
+    <Content Include="PWA\js\components\color-picker\modules\hue-slider.js" />
+    <Content Include="PWA\js\components\color-picker\modules\initial-current-colors.js" />
+    <Content Include="PWA\js\components\color-picker\modules\palette.js" />
+    <Content Include="PWA\js\components\color-picker\modules\rgb-bars.js" />
+    <Content Include="PWA\js\components\color-picker\modules\rgb-sliders.js" />
+    <Content Include="PWA\js\components\color-picker\modules\sb-spectrum.js" />
+    <Content Include="PWA\js\components\color-picker\modules\wheel.js" />
+    <Content Include="PWA\js\components\contacts-list\contacts-list.js" />
+    <Content Include="PWA\js\components\data-table\data-table-class.js" />
+    <Content Include="PWA\js\components\data-table\data-table.js" />
+    <Content Include="PWA\js\components\dialog\dialog-class.js" />
+    <Content Include="PWA\js\components\dialog\dialog.js" />
+    <Content Include="PWA\js\components\elevation\elevation.js" />
+    <Content Include="PWA\js\components\fab\fab.js" />
+    <Content Include="PWA\js\components\form\form.js" />
+    <Content Include="PWA\js\components\gauge\gauge-class.js" />
+    <Content Include="PWA\js\components\gauge\gauge.js" />
+    <Content Include="PWA\js\components\grid\grid.js" />
+    <Content Include="PWA\js\components\icon\icon.js" />
+    <Content Include="PWA\js\components\infinite-scroll\infinite-scroll.js" />
+    <Content Include="PWA\js\components\input\input.js" />
+    <Content Include="PWA\js\components\lazy\lazy.js" />
+    <Content Include="PWA\js\components\link\link.js" />
+    <Content Include="PWA\js\components\list-index\list-index-class.js" />
+    <Content Include="PWA\js\components\list-index\list-index.js" />
+    <Content Include="PWA\js\components\list\list.js" />
+    <Content Include="PWA\js\components\login-screen\login-screen-class.js" />
+    <Content Include="PWA\js\components\login-screen\login-screen.js" />
+    <Content Include="PWA\js\components\menu\menu.js" />
+    <Content Include="PWA\js\components\messagebar\messagebar-class.js" />
+    <Content Include="PWA\js\components\messagebar\messagebar.js" />
+    <Content Include="PWA\js\components\messages\messages-class.js" />
+    <Content Include="PWA\js\components\messages\messages.js" />
+    <Content Include="PWA\js\components\modal\custom-modal-class.js" />
+    <Content Include="PWA\js\components\modal\modal-class.js" />
+    <Content Include="PWA\js\components\modal\modal.js" />
+    <Content Include="PWA\js\components\navbar\navbar.js" />
+    <Content Include="PWA\js\components\notification\notification-class.js" />
+    <Content Include="PWA\js\components\notification\notification.js" />
+    <Content Include="PWA\js\components\page\page.js" />
+    <Content Include="PWA\js\components\panel\panel-class.js" />
+    <Content Include="PWA\js\components\panel\panel.js" />
+    <Content Include="PWA\js\components\panel\resizable-panel.js" />
+    <Content Include="PWA\js\components\panel\swipe-panel.js" />
+    <Content Include="PWA\js\components\photo-browser\photo-browser-class.js" />
+    <Content Include="PWA\js\components\photo-browser\photo-browser.js" />
+    <Content Include="PWA\js\components\picker\picker-class.js" />
+    <Content Include="PWA\js\components\picker\picker-column.js" />
+    <Content Include="PWA\js\components\picker\picker.js" />
+    <Content Include="PWA\js\components\pie-chart\pie-chart-class.js" />
+    <Content Include="PWA\js\components\pie-chart\pie-chart.js" />
+    <Content Include="PWA\js\components\popover\popover-class.js" />
+    <Content Include="PWA\js\components\popover\popover.js" />
+    <Content Include="PWA\js\components\popup\popup-class.js" />
+    <Content Include="PWA\js\components\popup\popup.js" />
+    <Content Include="PWA\js\components\preloader\preloader.js" />
+    <Content Include="PWA\js\components\progressbar\progressbar.js" />
+    <Content Include="PWA\js\components\pull-to-refresh\pull-to-refresh-class.js" />
+    <Content Include="PWA\js\components\pull-to-refresh\pull-to-refresh.js" />
+    <Content Include="PWA\js\components\radio\radio.js" />
+    <Content Include="PWA\js\components\range\range-class.js" />
+    <Content Include="PWA\js\components\range\range.js" />
+    <Content Include="PWA\js\components\searchbar\remove-diacritics.js" />
+    <Content Include="PWA\js\components\searchbar\searchbar-class.js" />
+    <Content Include="PWA\js\components\searchbar\searchbar.js" />
+    <Content Include="PWA\js\components\sheet\sheet-class.js" />
+    <Content Include="PWA\js\components\sheet\sheet.js" />
+    <Content Include="PWA\js\components\skeleton\skeleton.js" />
+    <Content Include="PWA\js\components\smart-select\smart-select-class.js" />
+    <Content Include="PWA\js\components\smart-select\smart-select.js" />
+    <Content Include="PWA\js\components\sortable\sortable.js" />
+    <Content Include="PWA\js\components\statusbar\statusbar.js" />
+    <Content Include="PWA\js\components\stepper\stepper-class.js" />
+    <Content Include="PWA\js\components\stepper\stepper.js" />
+    <Content Include="PWA\js\components\subnavbar\subnavbar.js" />
+    <Content Include="PWA\js\components\swipeout\swipeout.js" />
+    <Content Include="PWA\js\components\swiper\swiper.js" />
+    <Content Include="PWA\js\components\tabs\tabs.js" />
+    <Content Include="PWA\js\components\text-editor\text-editor-class.js" />
+    <Content Include="PWA\js\components\text-editor\text-editor.js" />
+    <Content Include="PWA\js\components\timeline\timeline.js" />
+    <Content Include="PWA\js\components\toast\toast-class.js" />
+    <Content Include="PWA\js\components\toast\toast.js" />
+    <Content Include="PWA\js\components\toggle\toggle-class.js" />
+    <Content Include="PWA\js\components\toggle\toggle.js" />
+    <Content Include="PWA\js\components\toolbar\toolbar.js" />
+    <Content Include="PWA\js\components\tooltip\tooltip-class.js" />
+    <Content Include="PWA\js\components\tooltip\tooltip.js" />
+    <Content Include="PWA\js\components\touch-ripple\touch-ripple-class.js" />
+    <Content Include="PWA\js\components\touch-ripple\touch-ripple.js" />
+    <Content Include="PWA\js\components\treeview\treeview.js" />
+    <Content Include="PWA\js\components\typography\typography.js" />
+    <Content Include="PWA\js\components\view\resizable-view.js" />
+    <Content Include="PWA\js\components\view\view-class.js" />
+    <Content Include="PWA\js\components\view\view.js" />
+    <Content Include="PWA\js\components\virtual-list\virtual-list-class.js" />
+    <Content Include="PWA\js\components\virtual-list\virtual-list.js" />
+    <Content Include="PWA\js\framework7-bundle.js" />
+    <Content Include="PWA\js\framework7-bundle.min.js" />
+    <Content Include="PWA\js\framework7-lite-bundle.js" />
+    <Content Include="PWA\js\framework7-lite.js" />
+    <Content Include="PWA\js\framework7.js" />
+    <Content Include="PWA\js\jquery-3.6.0.min.js" />
+    <Content Include="PWA\js\modules\clicks\clicks.js" />
+    <Content Include="PWA\js\modules\component\%24h.js" />
+    <Content Include="PWA\js\modules\component\%24jsx.js" />
+    <Content Include="PWA\js\modules\component\component-class.js" />
+    <Content Include="PWA\js\modules\component\component.js" />
+    <Content Include="PWA\js\modules\component\custom-components.js" />
+    <Content Include="PWA\js\modules\component\eventslisteners.js" />
+    <Content Include="PWA\js\modules\component\parse-component.js" />
+    <Content Include="PWA\js\modules\component\patch.js" />
+    <Content Include="PWA\js\modules\component\snabbdom\h.js" />
+    <Content Include="PWA\js\modules\component\snabbdom\helpers\attachto.js" />
+    <Content Include="PWA\js\modules\component\snabbdom\hooks.js" />
+    <Content Include="PWA\js\modules\component\snabbdom\htmldomapi.js" />
+    <Content Include="PWA\js\modules\component\snabbdom\is.js" />
+    <Content Include="PWA\js\modules\component\snabbdom\modules\attributes.js" />
+    <Content Include="PWA\js\modules\component\snabbdom\modules\class.js" />
+    <Content Include="PWA\js\modules\component\snabbdom\modules\dataset.js" />
+    <Content Include="PWA\js\modules\component\snabbdom\modules\eventlisteners.js" />
+    <Content Include="PWA\js\modules\component\snabbdom\modules\hero.js" />
+    <Content Include="PWA\js\modules\component\snabbdom\modules\module.js" />
+    <Content Include="PWA\js\modules\component\snabbdom\modules\props.js" />
+    <Content Include="PWA\js\modules\component\snabbdom\modules\style.js" />
+    <Content Include="PWA\js\modules\component\snabbdom\snabbdom.bundle.js" />
+    <Content Include="PWA\js\modules\component\snabbdom\snabbdom.js" />
+    <Content Include="PWA\js\modules\component\snabbdom\thunk.js" />
+    <Content Include="PWA\js\modules\component\snabbdom\tovnode.js" />
+    <Content Include="PWA\js\modules\component\snabbdom\vnode.js" />
+    <Content Include="PWA\js\modules\component\vdom.js" />
+    <Content Include="PWA\js\modules\demo-module.js" />
+    <Content Include="PWA\js\modules\device\device.js" />
+    <Content Include="PWA\js\modules\history\history.js" />
+    <Content Include="PWA\js\modules\request\request.js" />
+    <Content Include="PWA\js\modules\resize\resize.js" />
+    <Content Include="PWA\js\modules\router\app-router-check.js" />
+    <Content Include="PWA\js\modules\router\async-component.js" />
+    <Content Include="PWA\js\modules\router\back.js" />
+    <Content Include="PWA\js\modules\router\clear-previous-history.js" />
+    <Content Include="PWA\js\modules\router\component-loader.js" />
+    <Content Include="PWA\js\modules\router\modal.js" />
+    <Content Include="PWA\js\modules\router\navigate.js" />
+    <Content Include="PWA\js\modules\router\process-route-queue.js" />
+    <Content Include="PWA\js\modules\router\redirect.js" />
+    <Content Include="PWA\js\modules\router\router-class.js" />
+    <Content Include="PWA\js\modules\router\router.js" />
+    <Content Include="PWA\js\modules\router\swipe-back.js" />
+    <Content Include="PWA\js\modules\router\tab.js" />
+    <Content Include="PWA\js\modules\service-worker\service-worker.js" />
+    <Content Include="PWA\js\modules\store\create-store.js" />
+    <Content Include="PWA\js\modules\store\store.js" />
+    <Content Include="PWA\js\modules\support\support.js" />
+    <Content Include="PWA\js\modules\touch\touch.js" />
+    <Content Include="PWA\js\modules\utils\utils.js" />
+    <Content Include="PWA\js\my-app.js" />
+    <Content Include="PWA\js\shared\%24jsx.js" />
+    <Content Include="PWA\js\shared\class.js" />
+    <Content Include="PWA\js\shared\constructor-methods.js" />
+    <Content Include="PWA\js\shared\dom7.js" />
+    <Content Include="PWA\js\shared\events-class.js" />
+    <Content Include="PWA\js\shared\get-device.js" />
+    <Content Include="PWA\js\shared\get-support.js" />
+    <Content Include="PWA\js\shared\history.js" />
+    <Content Include="PWA\js\shared\modal-methods.js" />
+    <Content Include="PWA\js\shared\request.js" />
+    <Content Include="PWA\js\shared\utils.js" />
+    <Content Include="PWA\pages\About.html" />
+    <Content Include="PWA\pages\gamepage.html" />
+    <Content Include="PWA\pages\join.html" />
+    <Content Include="PWA\pages\invite.html" />
+    <Content Include="PWA\pages\creategame.html" />
+    <Content Include="PWA\pages\activate.html" />
+    <Content Include="PWA\pages\login.html" />
+    <Content Include="PWA\pages\register.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="ConnectGoogleFitApi.aspx.cs">
+      <DependentUpon>ConnectGoogleFitApi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConnectGoogleFitApi.aspx.designer.cs">
+      <DependentUpon>ConnectGoogleFitApi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\PWAController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FitPlay.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FitPlay.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FitPlay.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FitPlay.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FitPlay.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FitPlay.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Game.cs">
+      <DependentUpon>FitPlay.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Player.cs">
+      <DependentUpon>FitPlay.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PlayerJoinedGame.cs">
+      <DependentUpon>FitPlay.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PWAModels.cs" />
+    <Compile Include="OAuth.aspx.cs">
+      <DependentUpon>OAuth.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OAuth.aspx.designer.cs">
+      <DependentUpon>OAuth.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Provider\Config.cs" />
+    <Compile Include="Provider\GoogleFitApiHandler.cs" />
+    <Compile Include="Security\CaptchaImage.cs" />
+    <Compile Include="Security\PlayerAuthorizationAttribute.cs" />
+    <Compile Include="Security\SecurityProvider.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <EntityDeploy Include="Models\FitPlay.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FitPlay.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\FitPlay.edmx.diagram">
+      <DependentUpon>FitPlay.edmx</DependentUpon>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64401</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:64401/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

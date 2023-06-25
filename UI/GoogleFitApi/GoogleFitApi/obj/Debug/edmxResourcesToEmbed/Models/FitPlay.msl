@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FitPlayModelStoreContainer" CdmEntityContainer="FitPlayEntities">
+    <EntitySetMapping Name="Games">
+      <EntityTypeMapping TypeName="FitPlayModel.Game">
+        <MappingFragment StoreEntitySet="Game">
+          <ScalarProperty Name="GameID" ColumnName="GameID" />
+          <ScalarProperty Name="GameTitle" ColumnName="GameTitle" />
+          <ScalarProperty Name="GameStartDate" ColumnName="GameStartDate" />
+          <ScalarProperty Name="GameEndDate" ColumnName="GameEndDate" />
+          <ScalarProperty Name="GameType" ColumnName="GameType" />
+          <ScalarProperty Name="MaximumNumberOfParticipant" ColumnName="MaximumNumberOfParticipant" />
+          <ScalarProperty Name="RegistrationDeadline" ColumnName="RegistrationDeadline" />
+          <ScalarProperty Name="Prize" ColumnName="Prize" />
+          <ScalarProperty Name="RegistrationFee" ColumnName="RegistrationFee" />
+          <ScalarProperty Name="PosterImage" ColumnName="PosterImage" />
+          <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+          <ScalarProperty Name="CreatorPlayerID" ColumnName="CreatorPlayerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlayerJoinedGames">
+      <EntityTypeMapping TypeName="FitPlayModel.PlayerJoinedGame">
+        <MappingFragment StoreEntitySet="PlayerJoinedGame">
+          <ScalarProperty Name="PlayerJoinedID" ColumnName="PlayerJoinedID" />
+          <ScalarProperty Name="Player_Id" ColumnName="Player_Id" />
+          <ScalarProperty Name="Game_Id" ColumnName="Game_Id" />
+          <ScalarProperty Name="JoinedDateTime" ColumnName="JoinedDateTime" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="GoogleFitDateJson" ColumnName="GoogleFitDateJson" />
+          <ScalarProperty Name="GoogleFitValue" ColumnName="GoogleFitValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Players">
+      <EntityTypeMapping TypeName="FitPlayModel.Player">
+        <MappingFragment StoreEntitySet="Players">
+          <ScalarProperty Name="Player_ID" ColumnName="Player_ID" />
+          <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="AvatarImage" ColumnName="AvatarImage" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="ActivationCode" ColumnName="ActivationCode" />
+          <ScalarProperty Name="IsActivated" ColumnName="IsActivated" />
+          <ScalarProperty Name="Body_Weight" ColumnName="Body_Weight" />
+          <ScalarProperty Name="Player_Height" ColumnName="Player_Height" />
+          <ScalarProperty Name="Body_BMI" ColumnName="Body_BMI" />
+          <ScalarProperty Name="GoogleAuthorizationCode" ColumnName="GoogleAuthorizationCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

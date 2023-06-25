@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FitPlayModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Game">
+    <Key>
+      <PropertyRef Name="GameID" />
+    </Key>
+    <Property Name="GameID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GameTitle" Type="nvarchar" MaxLength="50" />
+    <Property Name="GameStartDate" Type="date" />
+    <Property Name="GameEndDate" Type="date" />
+    <Property Name="GameType" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaximumNumberOfParticipant" Type="int" />
+    <Property Name="RegistrationDeadline" Type="date" />
+    <Property Name="Prize" Type="money" />
+    <Property Name="RegistrationFee" Type="money" />
+    <Property Name="PosterImage" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreatedDateTime" Type="date" />
+    <Property Name="CreatorPlayerID" Type="int" />
+  </EntityType>
+  <EntityType Name="PlayerJoinedGame">
+    <Key>
+      <PropertyRef Name="PlayerJoinedID" />
+    </Key>
+    <Property Name="PlayerJoinedID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Player_Id" Type="int" Nullable="false" />
+    <Property Name="Game_Id" Type="int" Nullable="false" />
+    <Property Name="JoinedDateTime" Type="date" />
+    <Property Name="Score" Type="int" />
+    <Property Name="GoogleFitDateJson" Type="ntext" />
+    <Property Name="GoogleFitValue" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Players">
+    <Key>
+      <PropertyRef Name="Player_ID" />
+    </Key>
+    <Property Name="Player_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlayerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gender" Type="bit" />
+    <Property Name="Age" Type="tinyint" />
+    <Property Name="Email" Type="nvarchar" MaxLength="500" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="500" />
+    <Property Name="AvatarImage" Type="nvarchar" MaxLength="500" />
+    <Property Name="Password" Type="nvarchar" MaxLength="500" />
+    <Property Name="ActivationCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsActivated" Type="bit" />
+    <Property Name="Body_Weight" Type="smallint" />
+    <Property Name="Player_Height" Type="smallint" />
+    <Property Name="Body_BMI" Type="smallint" />
+    <Property Name="GoogleAuthorizationCode" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityContainer Name="FitPlayModelStoreContainer">
+    <EntitySet Name="Game" EntityType="Self.Game" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlayerJoinedGame" EntityType="Self.PlayerJoinedGame" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Players" EntityType="Self.Players" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,289 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- Color theme for statusbar (Android only) -->
+    <meta name="theme-color" content="#2196f3">
+    <!-- Your app title -->
+    <title>FitPlay</title>
+    <!-- Path to Framework7 Library Bundle CSS -->
+    <link rel="stylesheet" href="css/framework7-bundle.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/my-app.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <style>
+        #JoinNow {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            z-index: 10000;
+            background-color: white;
+        }
+
+        .IntroImage {
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .IntroTitle {
+            font-size: 25pt;
+            margin-top: 20%;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .IntroImage img {
+            width: 100%;
+        }
+
+        .IntroLoginBtn {
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .IntroCopyright {
+            position: fixed;
+            bottom: 25px;
+            left: 0px;
+            right: 0px;
+            text-align: center;
+            font-size: 9pt;
+            color: gray;
+        }
+
+        .IntroSignupBtn {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .MainPageImage {
+            width: 100%;
+        }
+
+        .MainBTNHoldersBox {
+            height: 270px;
+            position: relative;
+            top: -50px;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .MainBTNHolderRows {
+            position: relative;
+            height: 50%;
+            width: 100%;
+            display: flex;
+        }
+
+        .MainBtnHolders {
+            width: 50%;
+            height: 100%;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .MainBtn {
+            border-radius: 20px;
+            width: 100%;
+            height: 100%;
+            color: white;
+            text-align: center;
+            display: block !important;
+            line-height: 25px;
+        }
+
+            .MainBtn .material-icons {
+                font-size: 35pt;
+                margin-top: 16px;
+            }
+        .MenuItems ul
+        {
+            list-style:none;
+            width:100%;
+            padding:0px;
+            margin:0px;
+        }
+
+            .MenuItems ul li {
+                width: 100%;
+                display:block !important;
+            }
+
+            .MenuItems ul li a {
+                color:dimgray;
+                padding:15px;
+                border-bottom:solid 1px lightgrey;
+                display:block;
+            }
+        .MainMenuLogo
+        {
+            height:200px;
+            position:relative;
+        }
+        .MainMenuLogo span{
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            font-size:30pt;
+            color:black;
+            font-weight:bold;
+        }
+    </style>
+</head>
+<!--<body class="theme-dark">-->
+<body id="MainBody">
+    <div id="LanguageScript">
+        <script id="LanguageSelectorScript" src="languages/language-en.js"></script>
+    </div>
+    <!-- App root element -->
+    <div id="app">
+        <div class="panel panel-left panel-cover MainMenu">
+            <div class="MainMenuLogo">
+                <span>FitPlay</span>
+            </div>
+            <div class="MenuItems">
+                <ul>
+                    <li>
+                        <a href="/index/" class="panel-close">Home Page</a>
+                    </li>
+                    <li>
+                        <a href="/login/" class="link panel-close" id="LoginBtn">Login</a>
+                    </li>
+                    <li>
+                        <a href="#" class="panel-close">Create New Game</a>
+                    </li>
+                    <li>
+                        <a href="#" class="panel-close">Join Existing Game</a>
+                    </li>
+                    <li>
+                        <a href="#" class="panel-close">How it works ?</a>
+                    </li>
+                    <li>
+                        <a href="/about/" class="panel-close">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            <!-- Initial Page, "data-name" contains page name -->
+            <div data-name="index" class="page">
+
+                <!-- Top Navbar -->
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <div class="left">
+                            <a href="#" class="link icon-only panel-open" data-panel=".MainMenu">
+                                <span class="material-icons">
+                                    menu
+                                </span>
+                            </a>
+                        </div>
+                        <div class="title">FitPlay</div>
+                    </div>
+                </div>
+
+                <!-- Scrollable page content -->
+                <div class="page-content">
+                    <img src="/images/MainPage.jpg" class="MainPageImage" />
+                    <div class="MainBTNHoldersBox">
+                        <div class="MainBTNHolderRows">
+                            <div class="MainBtnHolders">
+                                <a class="MainBtn button button-round button-fill">
+                                    <span class="material-icons md-48">
+                                        sports_handball
+                                    </span>
+                                    <div class="MainBtnTitle">New Game</div>
+                                </a>
+                            </div>
+                            <div class="MainBtnHolders">
+                                <a class="MainBtn button button-round button-fill">
+                                    <span class="material-icons md-48">
+                                        sports_kabaddi
+                                    </span>
+                                    <div class="MainBtnTitle">Join Game</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="MainBTNHolderRows">
+                            <div class="MainBtnHolders">
+                                <a class="MainBtn button button-round button-fill">
+                                    <span class="material-icons md-48">
+                                        timeline
+                                    </span>
+                                    <div class="MainBtnTitle">Game Statistic</div>
+                                </a>
+                            </div>
+                            <div class="MainBtnHolders">
+                                <a class="MainBtn button button-round button-fill">
+                                    <span class="material-icons md-48">
+                                        portrait
+                                    </span>
+                                    <div class="MainBtnTitle">Profile</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="BottomToolBar">
+            <div class="d-flex">
+                <a class="BottomToolBarIcons" href="/index/">
+                    <span class="material-icons">
+                        home
+                    </span>
+                </a>
+                <a class="BottomToolBarIcons" href="/search/?id=2">
+                    <span class="material-icons">
+                        search
+                    </span>
+                </a>
+                <a class="BottomToolBarIcons" href="/productgroups/">
+                    <span class="material-icons">
+                        receipt_long
+                    </span>
+                </a>
+                <a class="BottomToolBarIcons" href="/basket/">
+                    <span class="material-icons">
+                        shopping_cart
+                        <span class="badge color-red d-none"></span>
+                    </span>
+                </a>
+                <a class="BottomToolBarIcons" href="/restaurantdetail/">
+                    <span class="material-icons">
+                        info
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+    <!-- Path to Framework7 Library Bundle JS-->
+    <script type="text/javascript" src="js/framework7-bundle.min.js"></script>
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="js/my-app.js?v=37"></script>
+    <div class="SplashScreen" id="SplashScreen">
+        <img src="images/logo.png" id="SplashLogo" style="display:none" />
+        <div style="display:none" id="CopyrightNotice">Powered by SiliconMenu.com</div>
+    </div>
+    <div id="JoinNow">
+        <div class="IntroTitle">FitPlay</div>
+        <div class="IntroImage"><img src="/images/Intro.jpg" /></div>
+        <div class="IntroLoginBtn"><a class="button button-round button-fill" onclick="ViewMainPage()">Login</a></div>
+        <div class="IntroSignupBtn">Not registered yet ? <a href="/signup/">Signup</a> now for free.</div>
+        <div class="IntroCopyright">Copyright 2022 FitPlay. All Rights Reserved.</div>
+    </div>
+</body>
+</html>

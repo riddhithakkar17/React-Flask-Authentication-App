@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FitPlayModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Game">
+          <Key>
+            <PropertyRef Name="GameID" />
+          </Key>
+          <Property Name="GameID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GameTitle" Type="nvarchar" MaxLength="50" />
+          <Property Name="GameStartDate" Type="date" />
+          <Property Name="GameEndDate" Type="date" />
+          <Property Name="GameType" Type="nvarchar" MaxLength="50" />
+          <Property Name="MaximumNumberOfParticipant" Type="int" />
+          <Property Name="RegistrationDeadline" Type="date" />
+          <Property Name="Prize" Type="money" />
+          <Property Name="RegistrationFee" Type="money" />
+          <Property Name="PosterImage" Type="nvarchar" MaxLength="500" />
+          <Property Name="CreatedDateTime" Type="date" />
+          <Property Name="CreatorPlayerID" Type="int" />
+        </EntityType>
+        <EntityType Name="PlayerJoinedGame">
+          <Key>
+            <PropertyRef Name="PlayerJoinedID" />
+          </Key>
+          <Property Name="PlayerJoinedID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Player_Id" Type="int" Nullable="false" />
+          <Property Name="Game_Id" Type="int" Nullable="false" />
+          <Property Name="JoinedDateTime" Type="date" />
+          <Property Name="Score" Type="int" />
+          <Property Name="GoogleFitDateJson" Type="ntext" />
+          <Property Name="GoogleFitValue" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Players">
+          <Key>
+            <PropertyRef Name="Player_ID" />
+          </Key>
+          <Property Name="Player_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PlayerName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Gender" Type="bit" />
+          <Property Name="Age" Type="tinyint" />
+          <Property Name="Email" Type="nvarchar" MaxLength="500" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="500" />
+          <Property Name="AvatarImage" Type="nvarchar" MaxLength="500" />
+          <Property Name="Password" Type="nvarchar" MaxLength="500" />
+          <Property Name="ActivationCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActivated" Type="bit" />
+          <Property Name="Body_Weight" Type="smallint" />
+          <Property Name="Player_Height" Type="smallint" />
+          <Property Name="Body_BMI" Type="smallint" />
+          <Property Name="GoogleAuthorizationCode" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <EntityContainer Name="FitPlayModelStoreContainer">
+          <EntitySet Name="Game" EntityType="Self.Game" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PlayerJoinedGame" EntityType="Self.PlayerJoinedGame" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Players" EntityType="Self.Players" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FitPlayModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Game">
+          <Key>
+            <PropertyRef Name="GameID" />
+          </Key>
+          <Property Name="GameID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GameTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GameStartDate" Type="DateTime" Precision="0" />
+          <Property Name="GameEndDate" Type="DateTime" Precision="0" />
+          <Property Name="GameType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaximumNumberOfParticipant" Type="Int32" />
+          <Property Name="RegistrationDeadline" Type="DateTime" Precision="0" />
+          <Property Name="Prize" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="RegistrationFee" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PosterImage" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDateTime" Type="DateTime" Precision="0" />
+          <Property Name="CreatorPlayerID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="PlayerJoinedGame">
+          <Key>
+            <PropertyRef Name="PlayerJoinedID" />
+          </Key>
+          <Property Name="PlayerJoinedID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Player_Id" Type="Int32" Nullable="false" />
+          <Property Name="Game_Id" Type="Int32" Nullable="false" />
+          <Property Name="JoinedDateTime" Type="DateTime" Precision="0" />
+          <Property Name="Score" Type="Int32" />
+          <Property Name="GoogleFitDateJson" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GoogleFitValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Player">
+          <Key>
+            <PropertyRef Name="Player_ID" />
+          </Key>
+          <Property Name="Player_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PlayerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="Boolean" />
+          <Property Name="Age" Type="Byte" />
+          <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="AvatarImage" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ActivationCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IsActivated" Type="Boolean" />
+          <Property Name="Body_Weight" Type="Int16" />
+          <Property Name="Player_Height" Type="Int16" />
+          <Property Name="Body_BMI" Type="Int16" />
+          <Property Name="GoogleAuthorizationCode" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="FitPlayEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Games" EntityType="Self.Game" />
+          <EntitySet Name="PlayerJoinedGames" EntityType="Self.PlayerJoinedGame" />
+          <EntitySet Name="Players" EntityType="Self.Player" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FitPlayModelStoreContainer" CdmEntityContainer="FitPlayEntities">
+          <EntitySetMapping Name="Games">
+            <EntityTypeMapping TypeName="FitPlayModel.Game">
+              <MappingFragment StoreEntitySet="Game">
+                <ScalarProperty Name="GameID" ColumnName="GameID" />
+                <ScalarProperty Name="GameTitle" ColumnName="GameTitle" />
+                <ScalarProperty Name="GameStartDate" ColumnName="GameStartDate" />
+                <ScalarProperty Name="GameEndDate" ColumnName="GameEndDate" />
+                <ScalarProperty Name="GameType" ColumnName="GameType" />
+                <ScalarProperty Name="MaximumNumberOfParticipant" ColumnName="MaximumNumberOfParticipant" />
+                <ScalarProperty Name="RegistrationDeadline" ColumnName="RegistrationDeadline" />
+                <ScalarProperty Name="Prize" ColumnName="Prize" />
+                <ScalarProperty Name="RegistrationFee" ColumnName="RegistrationFee" />
+                <ScalarProperty Name="PosterImage" ColumnName="PosterImage" />
+                <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+                <ScalarProperty Name="CreatorPlayerID" ColumnName="CreatorPlayerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PlayerJoinedGames">
+            <EntityTypeMapping TypeName="FitPlayModel.PlayerJoinedGame">
+              <MappingFragment StoreEntitySet="PlayerJoinedGame">
+                <ScalarProperty Name="PlayerJoinedID" ColumnName="PlayerJoinedID" />
+                <ScalarProperty Name="Player_Id" ColumnName="Player_Id" />
+                <ScalarProperty Name="Game_Id" ColumnName="Game_Id" />
+                <ScalarProperty Name="JoinedDateTime" ColumnName="JoinedDateTime" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="GoogleFitDateJson" ColumnName="GoogleFitDateJson" />
+                <ScalarProperty Name="GoogleFitValue" ColumnName="GoogleFitValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Players">
+            <EntityTypeMapping TypeName="FitPlayModel.Player">
+              <MappingFragment StoreEntitySet="Players">
+                <ScalarProperty Name="Player_ID" ColumnName="Player_ID" />
+                <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="AvatarImage" ColumnName="AvatarImage" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="ActivationCode" ColumnName="ActivationCode" />
+                <ScalarProperty Name="IsActivated" ColumnName="IsActivated" />
+                <ScalarProperty Name="Body_Weight" ColumnName="Body_Weight" />
+                <ScalarProperty Name="Player_Height" ColumnName="Player_Height" />
+                <ScalarProperty Name="Body_BMI" ColumnName="Body_BMI" />
+                <ScalarProperty Name="GoogleAuthorizationCode" ColumnName="GoogleAuthorizationCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

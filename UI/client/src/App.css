@@ -1,0 +1,198 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.navbar-bg {
+  background-color: transparent;
+}
+
+.navbar-bg::before {
+  background: none !important;
+}
+
+#JoinNow {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 10000;
+  background-color: white;
+}
+
+.IntroImage {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.IntroTitle {
+  font-size: 25pt;
+  margin-top: 20%;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.IntroImage img {
+  width: 100%;
+}
+
+.IntroLoginBtn {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.IntroCopyright {
+  position: fixed;
+  bottom: 25px;
+  left: 0px;
+  right: 0px;
+  text-align: center;
+  font-size: 9pt;
+  color: gray;
+}
+
+.IntroSignupBtn {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.MainPageImage {
+  width: 100%;
+}
+
+.MainBTNHoldersBox {
+  height: 270px;
+  position: relative;
+  top: -50px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.MainBTNHolderRows {
+  position: relative;
+  height: 50%;
+  width: 100%;
+  display: flex;
+}
+
+.MainBtnHolders {
+  width: 50%;
+  height: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.MainBtn {
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  color: white;
+  text-align: center;
+  display: block !important;
+  line-height: 25px;
+}
+
+.MainBtn .material-icons {
+  font-size: 35pt;
+  margin-top: 16px;
+}
+.MenuItems ul {
+  list-style: none;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+.MenuItems ul li {
+  width: 100%;
+  display: block !important;
+}
+
+.MenuItems ul li a {
+  color: dimgray;
+  padding: 15px;
+  border-bottom: solid 1px lightgrey;
+  display: block;
+}
+.MainMenuLogo {
+  height: 200px;
+  position: relative;
+}
+.MainMenuLogo span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30pt;
+  color: black;
+  font-weight: bold;
+}
+
+.NoBox {
+  border: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+.PageHeaderImage {
+  width: 100% !important;
+}
+.playerRanking {
+  font-size: 20px;
+}
+.avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-left: 5%;
+}
+.playerName {
+  margin-left: 5%;
+  font-size: 20px;
+}
+.playerPoints {
+  /* margin-left: 20%; */
+  /* margin-right: 5%; */
+  font-size: 20px;
+  float: right;
+}

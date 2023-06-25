@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FitPlayModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Game">
+    <Key>
+      <PropertyRef Name="GameID" />
+    </Key>
+    <Property Name="GameID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GameTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GameStartDate" Type="DateTime" Precision="0" />
+    <Property Name="GameEndDate" Type="DateTime" Precision="0" />
+    <Property Name="GameType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MaximumNumberOfParticipant" Type="Int32" />
+    <Property Name="RegistrationDeadline" Type="DateTime" Precision="0" />
+    <Property Name="Prize" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="RegistrationFee" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PosterImage" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDateTime" Type="DateTime" Precision="0" />
+    <Property Name="CreatorPlayerID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PlayerJoinedGame">
+    <Key>
+      <PropertyRef Name="PlayerJoinedID" />
+    </Key>
+    <Property Name="PlayerJoinedID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Player_Id" Type="Int32" Nullable="false" />
+    <Property Name="Game_Id" Type="Int32" Nullable="false" />
+    <Property Name="JoinedDateTime" Type="DateTime" Precision="0" />
+    <Property Name="Score" Type="Int32" />
+    <Property Name="GoogleFitDateJson" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="GoogleFitValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Player">
+    <Key>
+      <PropertyRef Name="Player_ID" />
+    </Key>
+    <Property Name="Player_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlayerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="Boolean" />
+    <Property Name="Age" Type="Byte" />
+    <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="AvatarImage" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ActivationCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsActivated" Type="Boolean" />
+    <Property Name="Body_Weight" Type="Int16" />
+    <Property Name="Player_Height" Type="Int16" />
+    <Property Name="Body_BMI" Type="Int16" />
+    <Property Name="GoogleAuthorizationCode" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="FitPlayEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Games" EntityType="Self.Game" />
+    <EntitySet Name="PlayerJoinedGames" EntityType="Self.PlayerJoinedGame" />
+    <EntitySet Name="Players" EntityType="Self.Player" />
+  </EntityContainer>
+</Schema>
